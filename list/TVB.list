@@ -22,3 +22,16 @@ USER-AGENT,mytv*
 DOMAIN-SUFFIX,mytvsuper.com
 DOMAIN-SUFFIX,mytvsuperlimited.hb.omtrdc.net
 DOMAIN-SUFFIX,mytvsuperlimited.sc.omtrdc.net
+## >> ViuTV
+DOMAIN-SUFFIX,viu.tv
+DOMAIN-SUFFIX,viu.com
+DOMAIN-SUFFIX,viu.now.com
+DOMAIN-SUFFIX,nowe.com
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,gvt2.com
+DOMAIN-SUFFIX,gvt3.com
+DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,firebaseio.com
+DOMAIN-SUFFIX,jwplayer.com
+DOMAIN-SUFFIX,cloudfront.net

@@ -12,3 +12,4 @@ IP-CIDR,13.112.0.0/14,Proxy,no-resolve
 DOMAIN-SUFFIX,hinet.net
 DOMAIN-SUFFIX,livednow.com
 DOMAIN-SUFFIX,ofiii.com
+DOMAIN-SUFFIX,cdn.hinet.net

@@ -13,3 +13,8 @@ DOMAIN-SUFFIX,hinet.net
 DOMAIN-SUFFIX,livednow.com
 DOMAIN-SUFFIX,ofiii.com
 DOMAIN-SUFFIX,cdn.hinet.net
+DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net
+IP-CIDR,172.17.0.2
+DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net:443
+DOMAIN-SUFFIX,4gtvfree-cds.cdn.hinet.net:443
+IP-CIDR,172.17.0.1

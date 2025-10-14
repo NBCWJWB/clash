@@ -1,20 +1,17 @@
-## > LiTV
-DOMAIN-SUFFIX,litv.tv
-DOMAIN-SUFFIX,LiTV.tv
-DOMAIN-SUFFIX,litvfreemobile-hichannel.cdn.hinet.net
-## > 4GTV
-DOMAIN-SUFFIX,4gtv.tv
-DOMAIN-SUFFIX,4gtvfreepc-cds.cdn.hinet.net
-DOMAIN-SUFFIX,4gtvfreepcvod-cds.cdn.hinet.net
-DOMAIN-SUFFIX,4gtvpc-cds.cdn.hinet.net
-DOMAIN-SUFFIX,4gtvpcvod-cds.cdn.hinet.net
-IP-CIDR,13.112.0.0/14
-DOMAIN-SUFFIX,hinet.net
-DOMAIN-SUFFIX,livednow.com
-DOMAIN-SUFFIX,ofiii.com
-DOMAIN-SUFFIX,cdn.hinet.net
-DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net
-IP-CIDR,172.17.0.2/32
-DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net:443
-DOMAIN-SUFFIX,4gtvfree-cds.cdn.hinet.net:443
-IP-CIDR,172.17.0.1/32
+  - DOMAIN-SUFFIX,litv.tv,TWLiTV
+  - DOMAIN-SUFFIX,LiTV.tv,TWLiTV
+  - DOMAIN-SUFFIX,litvfreemobile-hichannel.cdn.hinet.net,TWLiTV
+  - DOMAIN-SUFFIX,4gtv.tv,TWLiTV
+  - DOMAIN-SUFFIX,4gtvfreepc-cds.cdn.hinet.net,TWLiTV
+  - DOMAIN-SUFFIX,4gtvfreepcvod-cds.cdn.hinet.net,TWLiTV
+  - DOMAIN-SUFFIX,4gtvpc-cds.cdn.hinet.net,TWLiTV
+  - DOMAIN-SUFFIX,4gtvpcvod-cds.cdn.hinet.net,TWLiTV
+  - DOMAIN-SUFFIX,hinet.net,TWLiTV
+  - DOMAIN-SUFFIX,livednow.com,TWLiTV
+  - DOMAIN-SUFFIX,ofiii.com,TWLiTV
+  - DOMAIN-SUFFIX,cdn.hinet.net,TWLiTV
+  - DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net,TWLiTV
+  - DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net:443,TWLiTV
+  - DOMAIN-SUFFIX,4gtvfree-cds.cdn.hinet.net:443,TWLiTV
+  - IP-CIDR,13.112.0.0/14,TWLiTV,no-resolve
+  - IP-CIDR,172.17.0.0/32,TWLiTV,no-resolve

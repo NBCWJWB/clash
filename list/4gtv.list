@@ -8,13 +8,13 @@ DOMAIN-SUFFIX,4gtvfreepc-cds.cdn.hinet.net
 DOMAIN-SUFFIX,4gtvfreepcvod-cds.cdn.hinet.net
 DOMAIN-SUFFIX,4gtvpc-cds.cdn.hinet.net
 DOMAIN-SUFFIX,4gtvpcvod-cds.cdn.hinet.net
-IP-CIDR,13.112.0.0/14,Proxy,no-resolve
+IP-CIDR,13.112.0.0/14
 DOMAIN-SUFFIX,hinet.net
 DOMAIN-SUFFIX,livednow.com
 DOMAIN-SUFFIX,ofiii.com
 DOMAIN-SUFFIX,cdn.hinet.net
 DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net
-IP-CIDR,172.17.0.2
+IP-CIDR,172.17.0.2/32
 DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net:443
 DOMAIN-SUFFIX,4gtvfree-cds.cdn.hinet.net:443
-IP-CIDR,172.17.0.1
+IP-CIDR,172.17.0.1/32

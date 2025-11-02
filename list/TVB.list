@@ -35,3 +35,6 @@ DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,firebaseio.com
 DOMAIN-SUFFIX,jwplayer.com
 DOMAIN-SUFFIX,cloudfront.net
+## >> other
+DOMAIN-KEYWORD,hoy.tv
+DOMAIN-KEYWORD,rthktv

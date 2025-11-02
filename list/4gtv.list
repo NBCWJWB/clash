@@ -13,5 +13,6 @@ DOMAIN-SUFFIX,cdn.hinet.net
 DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net
 DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net:443
 DOMAIN-SUFFIX,4gtvfree-cds.cdn.hinet.net:443
+DOMAIN-KEYWORD,hinet.net
 IP-CIDR,13.112.0.0/14,no-resolve
 IP-CIDR,172.17.0.0/32,no-resolve

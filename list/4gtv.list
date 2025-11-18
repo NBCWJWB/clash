@@ -42,3 +42,5 @@ DOMAIN-KEYWORD,nnews
 DOMAIN-KEYWORD,nnews-zh
 DOMAIN-KEYWORD,nnews-vn
 DOMAIN-KEYWORD,nnews-wf
+IP-CIDR,13.112.0.0/14,no-resolve
+IP-CIDR,172.17.0.0/32,no-resolve

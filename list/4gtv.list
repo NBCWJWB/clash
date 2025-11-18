@@ -9,10 +9,14 @@ DOMAIN-SUFFIX,4gtvpcvod-cds.cdn.hinet.net
 DOMAIN-SUFFIX,hinet.net
 DOMAIN-SUFFIX,livednow.com
 DOMAIN-SUFFIX,ofiii.com
+DOMAIN-SUFFIX,cdi.ofiii.com
 DOMAIN-SUFFIX,cdn.hinet.net
 DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net
+DOMAIN-SUFFIX,4gtvfreemobile-cds.cdn.hinet.net
+DOMAIN-SUFFIX,cdi.ofiii.com:443
 DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net:443
 DOMAIN-SUFFIX,4gtvfree-cds.cdn.hinet.net:443
+DOMAIN-SUFFIX,4gtvfreemobile-cds.cdn.hinet.net:443
 DOMAIN-SUFFIX,ftv.com.tw
 DOMAIN-KEYWORD,hinet.net
 DOMAIN-KEYWORD,hinet

@@ -1,3 +1,5 @@
+DOMAIN-SUFFIX,192.168.100.1:5050
+DOMAIN-SUFFIX,http://192.168.100.1:5050/
 DOMAIN-SUFFIX,litv.tv
 DOMAIN-SUFFIX,LiTV.tv
 DOMAIN-SUFFIX,litvfreemobile-hichannel.cdn.hinet.net

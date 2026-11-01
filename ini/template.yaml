@@ -1,0 +1,776 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+external-controller: "127.0.0.1:9090"
+unified-delay: true
+tcp-concurrent: true
+
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver: [119.29.29.29, 119.28.28.28, 52.80.66.66]
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver-policy:
+    +.google.com: "https://dns.cloudflare.com/dns-query"
+    +.github.com: "https://dns.cloudflare.com/dns-query"
+    +.openai.com: "https://dns.cloudflare.com/dns-query"
+    +.chatgpt.com: "https://dns.cloudflare.com/dns-query"
+    +.anthropic.com: "https://dns.cloudflare.com/dns-query"
+  nameserver:
+    - "https://doh.pub/dns-query"
+    - "https://dns.alidns.com/dns-query"
+    - "tls://dot.pub:853"
+    - "tls://dns.alidns.com:853"
+  fallback:
+    - "https://dns.cloudflare.com/dns-query"
+    - "https://dns.google/dns-query"
+    - "tls://1.1.1.1:853"
+    - "tls://8.8.8.8:853"
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 0.0.0.0/8
+      - 10.0.0.0/8
+      - 100.64.0.0/10
+      - 127.0.0.0/8
+      - 169.254.0.0/16
+      - 172.16.0.0/12
+      - 192.168.0.0/16
+      - 224.0.0.0/4
+      - 240.0.0.0/4
+    domain:
+      - +.google.com
+      - +.facebook.com
+      - +.youtube.com
+      - +.githubusercontent.com
+      - +.googlevideo.com
+      - +.googleapis.cn
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "*.localhost"
+    - "*.test"
+    - "localhost.ptlogin2.qq.com"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "lens.l.google.com"
+    - "*.srv.nintendo.net"
+    - "+.stun.playstation.net"
+    - "xbox.*.*.microsoft.com"
+    - "*.*.xboxlive.com"
+    - "+.msftncsi.com"
+    - "+.msftconnecttest.com"
+
+# 这里是转换器动态注入节点的位置
+proxies:
+  {{proxies}}
+
+rule-providers:
+  HKTVB:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/NBCWJWB/clash/refs/heads/main/list/TVB.list"
+    path: ./rule_provider/HKTVB.yaml
+    interval: 86400
+
+  TW4gtv:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/NBCWJWB/clash/refs/heads/main/list/4gtv.list"
+    path: ./rule_provider/TW4gtv.yaml
+    interval: 86400
+
+  Copilot:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/ef7375bf1797cc3d232cede8e75e93f5ed997a4e/rule/Loon/Copilot/Copilot.list"
+    path: ./rule_provider/Copilot.yaml
+    interval: 86400
+
+  ChatGPT:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/NBCWJWB/clash/refs/heads/main/list/ChatGPT.list"
+    path: ./rule_provider/ChatGPT.yaml
+    interval: 86400
+
+  Gemini:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/ef7375bf1797cc3d232cede8e75e93f5ed997a4e/rule/Loon/Gemini/Gemini.list"
+    path: ./rule_provider/Gemini.yaml
+    interval: 86400
+
+  Claude:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/ef7375bf1797cc3d232cede8e75e93f5ed997a4e/rule/Loon/Claude/Claude.list"
+    path: ./rule_provider/Claude.yaml
+    interval: 86400
+
+  MetaAI:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/NBCWJWB/clash/refs/heads/main/list/MetaAi.list"
+    path: ./rule_provider/MetaAI.yaml
+    interval: 86400
+
+  Perplexity:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/NBCWJWB/clash/refs/heads/main/list/Perplexity.list"
+    path: ./rule_provider/Perplexity.yaml
+    interval: 86400
+
+  Grok:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/NBCWJWB/clash/refs/heads/main/list/Grok.list"
+    path: ./rule_provider/Grok.yaml
+    interval: 86400
+
+  GitHub:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list"
+    path: ./rule_provider/GitHub.yaml
+    interval: 86400
+
+  Telegram:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Telegram.list"
+    path: ./rule_provider/Telegram.yaml
+    interval: 86400
+
+  TikTok:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/TikTok.list"
+    path: ./rule_provider/TikTok.yaml
+    interval: 86400
+
+  TwitterX:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Twitter.list"
+    path: ./rule_provider/TwitterX.yaml
+    interval: 86400
+
+  WhatsApp:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Whatsapp.list"
+    path: ./rule_provider/WhatsApp.yaml
+    interval: 86400
+
+  Facebook:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Facebook.list"
+    path: ./rule_provider/Facebook.yaml
+    interval: 86400
+
+  YouTube:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
+    path: ./rule_provider/YouTube.yaml
+    interval: 86400
+
+  Netflix:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list"
+    path: ./rule_provider/Netflix.yaml
+    interval: 86400
+
+  Spotify:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Spotify.list"
+    path: ./rule_provider/Spotify.yaml
+    interval: 86400
+
+  Disney:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Global-Services/Disney.list"
+    path: ./rule_provider/Disney.yaml
+    interval: 86400
+
+  Steam:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list"
+    path: ./rule_provider/Steam.yaml
+    interval: 86400
+
+  HBO:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/HBO.list"
+    path: ./rule_provider/HBO.yaml
+    interval: 86400
+
+  Crypto:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Crypto.list"
+    path: ./rule_provider/Crypto.yaml
+    interval: 86400
+
+  Amazon:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Amazon.list"
+    path: ./rule_provider/Amazon.yaml
+    interval: 86400
+
+  Apple:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Apple.list"
+    path: ./rule_provider/Apple.yaml
+    interval: 86400
+
+  Microsoft:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list"
+    path: ./rule_provider/Microsoft.yaml
+    interval: 86400
+
+  Google:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
+    path: ./rule_provider/Google.yaml
+    interval: 86400
+
+proxy-groups:
+  - name: "自动选择"
+    type: url-test
+    proxies:
+      {{proxy_names}}
+    url: "http://www.gstatic.com/generate_204"
+    interval: 180
+    tolerance: 50
+
+  - name: "故障转移"
+    type: fallback
+    proxies:
+      {{proxy_names}}
+    url: "http://www.gstatic.com/generate_204"
+    interval: 180
+
+  - name: "香港自动"
+    type: url-test
+    proxies:
+      {{proxy_names}}
+    url: "http://www.gstatic.com/generate_204"
+    interval: 180
+    tolerance: 50
+
+  - name: "台湾自动"
+    type: url-test
+    proxies:
+      {{proxy_names}}
+    url: "http://www.gstatic.com/generate_204"
+    interval: 180
+    tolerance: 50
+
+  - name: "日本自动"
+    type: url-test
+    proxies:
+      {{proxy_names}}
+    url: "http://www.gstatic.com/generate_204"
+    interval: 180
+    tolerance: 50
+
+  - name: "新加坡自动"
+    type: url-test
+    proxies:
+      {{proxy_names}}
+    url: "http://www.gstatic.com/generate_204"
+    interval: 180
+    tolerance: 50
+
+  - name: "美国自动"
+    type: url-test
+    proxies:
+      {{proxy_names}}
+    url: "http://www.gstatic.com/generate_204"
+    interval: 180
+    tolerance: 50
+
+  - name: "其他自动"
+    type: url-test
+    proxies:
+      {{proxy_names}}
+    url: "http://www.gstatic.com/generate_204"
+    interval: 180
+    tolerance: 50
+
+  - name: "手动切换"
+    type: select
+    proxies:
+      - "自动选择"
+      - "故障转移"
+      - DIRECT
+      {{proxy_names}}
+
+  - name: "HKTVB"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "TW4gtv"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "ChatGPT"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Copilot"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Gemini"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Claude"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Meta AI"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Perplexity"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Grok"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "GitHub"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Telegram"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "TikTok"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Twitter(X)"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "WhatsApp"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Facebook"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "YouTube"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Netflix"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Disney"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Spotify"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Steam"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切转"
+
+  - name: "HBO"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Crypto"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Amazon"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Apple"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Microsoft"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+  - name: "Google"
+    type: select
+    proxies:
+      - DIRECT
+      - "自动选择"
+      - "香港自动"
+      - "台湾自动"
+      - "日本自动"
+      - "新加坡自动"
+      - "美国自动"
+      - "其他自动"
+      - "手动切换"
+
+rules:
+  - DOMAIN-SUFFIX,youtube.com,YouTube
+  - DOMAIN-SUFFIX,googlevideo.com,YouTube
+  - DOMAIN-SUFFIX,ytimg.com,YouTube
+  - DOMAIN-SUFFIX,youtu.be,YouTube
+  - DOMAIN-SUFFIX,googleapis.com,YouTube
+  - DOMAIN-SUFFIX,ggpht.com,YouTube
+  - DOMAIN-SUFFIX,gvt1.com,YouTube
+  - DOMAIN-SUFFIX,gvt2.com,YouTube
+  - DOMAIN-SUFFIX,googleusercontent.com,YouTube
+
+  - DOMAIN-SUFFIX,github.com,GitHub
+  - DOMAIN-SUFFIX,githubusercontent.com,GitHub
+  - DOMAIN-SUFFIX,github.io,GitHub
+  - DOMAIN-SUFFIX,githubassets.com,GitHub
+
+  - DOMAIN-SUFFIX,telegram.org,Telegram
+  - DOMAIN-SUFFIX,t.me,Telegram
+  - DOMAIN-SUFFIX,tdesktop.com,Telegram
+  - DOMAIN-SUFFIX,telegram.me,Telegram
+  - DOMAIN-SUFFIX,telegram-cdn.org,Telegram
+  - DOMAIN-SUFFIX,telegra.ph,Telegram
+
+  - DOMAIN-SUFFIX,tiktok.com,TikTok
+  - DOMAIN-SUFFIX,tiktokcdn.com,TikTok
+  - DOMAIN-SUFFIX,tiktokv.com,TikTok
+  - DOMAIN-SUFFIX,byteoversea.com,TikTok
+  - DOMAIN-SUFFIX,ibytedtos.com,TikTok
+  - DOMAIN-SUFFIX,ipstatp.com,TikTok
+
+  - DOMAIN-SUFFIX,x.com,Twitter(X)
+  - DOMAIN-SUFFIX,twitter.com,Twitter(X)
+  - DOMAIN-SUFFIX,twimg.com,Twitter(X)
+  - DOMAIN-SUFFIX,facebook.com,Facebook
+  - DOMAIN-SUFFIX,fbcdn.net,Facebook
+  - DOMAIN-SUFFIX,whatsapp.com,WhatsApp
+  - DOMAIN-SUFFIX,whatsapp.net,WhatsApp
+  - DOMAIN-SUFFIX,instagram.com,Facebook
+  - DOMAIN-SUFFIX,cdninstagram.com,Facebook
+
+  - DOMAIN-SUFFIX,openai.com,ChatGPT
+  - DOMAIN-SUFFIX,chatgpt.com,ChatGPT
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,ChatGPT
+  - DOMAIN-SUFFIX,auth0.com,ChatGPT
+  - DOMAIN-SUFFIX,azureedge.net,ChatGPT
+
+  - DOMAIN-SUFFIX,gemini.google.com,Gemini
+  - DOMAIN-SUFFIX,ai.google.dev,Gemini
+  - DOMAIN-SUFFIX,googleapis.com,Gemini
+
+  - DOMAIN-SUFFIX,claude.ai,Claude
+  - DOMAIN-SUFFIX,anthropic.com,Claude
+
+  - DOMAIN-SUFFIX,meta.ai,Meta AI
+  - DOMAIN-SUFFIX,microsoft.com,Copilot
+  - DOMAIN-SUFFIX,office.com,Copilot
+  - DOMAIN-SUFFIX,live.com,Copilot
+  - DOMAIN-SUFFIX,msn.com,Copilot
+
+  - DOMAIN-SUFFIX,perplexity.ai,Perplexity
+  - DOMAIN-SUFFIX,grok.com,Grok
+  - DOMAIN-SUFFIX,x.ai,Grok
+
+  - DOMAIN-SUFFIX,netflix.com,Netflix
+  - DOMAIN-SUFFIX,nflxvideo.net,Netflix
+  - DOMAIN-SUFFIX,nflxso.net,Netflix
+  - DOMAIN-SUFFIX,disney.com,Disney
+  - DOMAIN-SUFFIX,disneyplus.com,Disney
+  - DOMAIN-SUFFIX,spotify.com,Spotify
+  - DOMAIN-SUFFIX,spotifycdn.com,Spotify
+  - DOMAIN-SUFFIX,steamcommunity.com,Steam
+  - DOMAIN-SUFFIX,steamstatic.com,Steam
+  - DOMAIN-SUFFIX,steamusercontent.com,Steam
+  - DOMAIN-SUFFIX,amazon.com,Amazon
+  - DOMAIN-SUFFIX,amazonaws.com,Amazon
+  - DOMAIN-SUFFIX,apple.com,Apple
+  - DOMAIN-SUFFIX,icloud.com,Apple
+  - DOMAIN-SUFFIX,microsoft.com,Microsoft
+  - DOMAIN-SUFFIX,windows.net,Microsoft
+  - DOMAIN-SUFFIX,google.com,Google
+  - DOMAIN-SUFFIX,googleapis.com,Google
+  - DOMAIN-SUFFIX,googleusercontent.com,Google
+
+  - RULE-SET,HKTVB,HKTVB
+  - RULE-SET,TW4gtv,TW4gtv
+  - RULE-SET,ChatGPT,ChatGPT
+  - RULE-SET,Copilot,Copilot
+  - RULE-SET,Gemini,Gemini
+  - RULE-SET,Claude,Claude
+  - RULE-SET,MetaAI,Meta AI
+  - RULE-SET,Perplexity,Perplexity
+  - RULE-SET,Grok,Grok
+  - RULE-SET,GitHub,GitHub
+  - RULE-SET,Telegram,Telegram
+  - RULE-SET,TikTok,TikTok
+  - RULE-SET,TwitterX,Twitter(X)
+  - RULE-SET,WhatsApp,WhatsApp
+  - RULE-SET,Facebook,Facebook
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,Disney,Disney
+  - RULE-SET,Spotify,Spotify
+  - RULE-SET,Steam,Steam
+  - RULE-SET,HBO,HBO
+  - RULE-SET,Crypto,Crypto
+  - RULE-SET,Amazon,Amazon
+  - RULE-SET,Apple,Apple
+  - RULE-SET,Microsoft,Microsoft
+  - RULE-SET,Google,Google
+  - MATCH,国外
